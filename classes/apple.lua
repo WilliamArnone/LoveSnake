@@ -1,5 +1,9 @@
 Apple = GameObject:extend()
 
+function Apple:new(x, y)
+    self.super:new(x, y, {1, 0, 0})
+end
+
 function Apple:MoveToNewPosition()
     local overlaps = false
 
@@ -15,9 +19,4 @@ function Apple:MoveToNewPosition()
             end
         end
     until not overlaps
-end
-
-function Apple:draw()
-    love.graphics.setColor(1, 0, 0)
-    love.graphics.rectangle("fill", self.x*cellWidth, self.y*cellHeight, cellHeight, cellHeight)
 end

@@ -1,5 +1,7 @@
 Snake = Object:extend()
 
+local green = {0, 1, 0}
+
 function Snake:IsColliding()
     for i, body in ipairs(self.bodies) do
         if self.head.x == body.x and self.head.y == body.y then
@@ -11,7 +13,7 @@ function Snake:IsColliding()
 end
 
 function Snake:new(x, y)
-    self.head = GameObject(x, y)
+    self.head = GameObject(x, y, green)
     self.bodies = {}
     --snake direction---------------------------------------------------------
     self.mx = 0
@@ -27,7 +29,7 @@ function Snake:update(dt)
     table.insert(self.bodies, 1, self.head)
     local ate_apple = false
 
-    self.head = GameObject(self.head.x + self.mx, self.head.y + self.my)
+    self.head = GameObject(self.head.x + self.mx, self.head.y + self.my, green)
 
     self.px = self.mx
     self.py = self.my
