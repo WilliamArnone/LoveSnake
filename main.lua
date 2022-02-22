@@ -8,6 +8,8 @@ local timer = 0
 local timeStep = 1/8
 
 local gameFont
+local starting
+local score
 
 function love.load()
     --window settings-------------------------------------------------
