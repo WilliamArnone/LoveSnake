@@ -60,14 +60,14 @@ function love.draw()
         return
     end
 
-    snake:draw()
-    apple:draw()
-
-    
     love.graphics.setColor(1, 1, 1)
     love.graphics.setFont(gameFont)
     love.graphics.print(score, love.graphics.getWidth()/2, 10)
 
+    love.graphics.translate(0, 50)
+
+    snake:draw()
+    apple:draw()
 end
 
 function love.keypressed(key)

@@ -6,6 +6,6 @@ cellHeight = 32
 
 function love.conf(t)
     t.window.width = gridWidth*cellWidth
-    t.window.height =  gridHeight*cellHeight
+    t.window.height =  gridHeight*cellHeight+50
     t.window.title = "An Object-Oriented Snake"
 end
