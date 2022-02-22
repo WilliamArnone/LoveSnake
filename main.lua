@@ -1,9 +1,3 @@
-gridWidth = 16
-gridHeight = 16
-
-cellWidth = 32
-cellHeight = 32
-
 local timer = 0
 local timeStep = 1/8
 
@@ -12,10 +6,6 @@ local starting
 local score
 
 function love.load()
-    --window settings-------------------------------------------------
-    love.window.setMode(gridWidth*cellWidth, gridHeight*cellHeight)
-    love.window.setTitle("An Object-Oriented Snake")
-    ------------------------------------------------------------------
     --include libraries-----------------------------------------------
     local o_ten_one = require "libraries.o-ten-one"
     Object = require "libraries.classic"
@@ -59,7 +49,7 @@ function love.update(dt)
         end
 
         if collide then
-            love.event.quit()
+            love.load()
         end
     end
 end
